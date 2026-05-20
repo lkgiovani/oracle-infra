@@ -1,0 +1,2 @@
+kubeconfig_path    = "~/.kube/k3s-lk-personal"
+kubeconfig_context = "default"
