@@ -145,3 +145,4 @@ The Load Balancer is no longer a Terraform output — its public IP lives on the
 4. Bootstrap secrets (see `infra/envs/prod/k8s/secrets/README.md`), then apply the helm layer. CCM untaints the nodes once it starts; nginx-gateway then creates its Service `LoadBalancer` and CCM provisions the OCI NLB.
 5. Argo CD reconciles app workloads from [`lkgiovani/oracle-gitops`](https://github.com/lkgiovani/oracle-gitops). Image-updater watches Docker Hub and writes tag bumps back to that repo.
 # oracle-infra
+# oracle-infra
