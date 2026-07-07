@@ -45,3 +45,27 @@ spec:
       allowedRoutes:
         namespaces:
           from: All
+    - name: https-rentmotos
+      port: 443
+      protocol: HTTPS
+      hostname: "rent-motos.com"
+      tls:
+        mode: Terminate
+        certificateRefs:
+          - kind: Secret
+            name: rent-motos-tls
+      allowedRoutes:
+        namespaces:
+          from: All
+    - name: https-rentmotos-www
+      port: 443
+      protocol: HTTPS
+      hostname: "www.rent-motos.com"
+      tls:
+        mode: Terminate
+        certificateRefs:
+          - kind: Secret
+            name: rent-motos-tls
+      allowedRoutes:
+        namespaces:
+          from: All
