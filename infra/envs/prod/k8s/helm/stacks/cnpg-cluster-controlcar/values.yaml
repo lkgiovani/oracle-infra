@@ -24,7 +24,7 @@ cluster:
 backups:
   enabled: true
   provider: s3
-  endpointURL: "https://88637849b2895815e424609442014ce3.r2.cloudflarestorage.com"
+  endpointURL: "https://93568f1a9774abcc891f74fadc622601.r2.cloudflarestorage.com"
   destinationPath: "s3://controlcar-backups/"
   s3:
     region: auto
