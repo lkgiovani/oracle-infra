@@ -1,0 +1,39 @@
+nameOverride: controlcar-postgres
+
+cluster:
+
+  instances: 2
+
+  storage:
+    size: 5Gi
+    storageClass: longhorn
+
+  monitoring:
+    enabled: true
+    podMonitor:
+      enabled: true
+
+  superuserSecret: controlcar-superuser-secret
+
+  initdb:
+    database: controlcar
+    owner: controlcar
+    secret:
+      name: controlcar-user-secret
+
+backups:
+  enabled: true
+  provider: s3
+  endpointURL: "https://88637849b2895815e424609442014ce3.r2.cloudflarestorage.com"
+  destinationPath: "s3://controlcar-backups/"
+  s3:
+    region: auto
+  secret:
+    create: false
+    name: controlcar-r2-backup-secret
+  retentionPolicy: "30d"
+  scheduledBackups:
+    - name: controlcar-daily-backup
+      schedule: "0 0 3 * * *"
+      backupOwnerReference: self
+      method: barmanObjectStore
