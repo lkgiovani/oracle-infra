@@ -1,4 +1,3 @@
-/*
 module "cnpg_operator" {
   source = "../../../../modules/helm-stack"
 
@@ -12,8 +11,6 @@ module "cnpg_operator" {
   values_files = ["${path.module}/stacks/cnpg-operator/values.yaml"]
 
   depends_on_resources = [
-    module.k8s_monitoring,
     module.prometheus_operator_crds,
   ]
 }
-*/

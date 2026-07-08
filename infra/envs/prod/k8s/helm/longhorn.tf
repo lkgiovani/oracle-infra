@@ -1,4 +1,3 @@
-/*
 module "longhorn" {
   source = "../../../../modules/helm-stack"
 
@@ -11,4 +10,3 @@ module "longhorn" {
 
   values_files = ["${path.module}/stacks/longhorn/values.yaml"]
 }
-*/
