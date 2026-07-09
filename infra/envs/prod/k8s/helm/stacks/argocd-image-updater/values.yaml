@@ -1,2 +1,9 @@
 metrics:
   enabled: true
+
+# Identidade de commit pro write-back via git (write-back-method git:secret).
+# Sem isto, o go-git falha o commit por falta de author.
+config:
+  git:
+    user: argocd-image-updater
+    email: image-updater@lkgiovani.com
